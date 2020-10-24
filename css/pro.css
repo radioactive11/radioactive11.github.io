@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --cyberpunk-yellow: #f0e801;
+  --among-us-red: #c51110;
+  --fall-guys-pink: #fa40a3;
+}
+
+.bg-cyberpunk:hover {
+  background: var(--cyberpunk-yellow);
+}
+.bg-among-us:hover {
+  background: var(--among-us-red);
+}
+.bg-fall-guys:hover {
+  background: var(--fall-guys-pink);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+.name {
+  transform: translate3d(0, 0, 50px);
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+.card:hover .name {
+  top: 1rem;
+  opacity: 1;
+}
+
+.buy {
+  left: 50%;
+  transform: translate3d(-50%, 0, 50px);
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+.card:hover .buy {
+  bottom: 1rem;
+  opacity: 1;
+}
+
+img {
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+}
+
+.card:hover img {
+  transform: translate3d(0, 0, 50px);
+  transform-style: preserve-3d;
+}
+
+.image::before {
+  content: "";
+  border-radius: .25rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: .25rem;
+  opacity: 0;
+  transition: all .5s;
+}
+
+.card:hover .image::before {
+  opacity: .2;
+}
+
+.image-1::before {
+  /* background: center / cover url("https://socialify.git.ci/radioactive11/ALPR-India/image?forks=1&language=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Dark"); */
+  background-color: #718096;
+}
+.image-2::before {
+  /* background: center / cover url("https://images.igdb.com/igdb/image/upload/t_cover_big/co1uaf.jpg"); */
+  background-color: #718096;
+}
+.image-3::before {
+  /* background: center / cover url("https://images.igdb.com/igdb/image/upload/t_cover_big/co2fq7.jpg"); */
+  background-color: #718096;
+}

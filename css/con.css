@@ -1,0 +1,267 @@
+/*
+ * Vars
+ */
+/*
+ * Mixins
+ */
+/*
+ * Main and utils
+ */
+body {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #9099ae;
+  background-color: #f9f9f9;
+  height: 100vh;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/*
+ * Card
+ */
+#card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: #fff;
+  height: 360px;
+  width: 600px;
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+#card.white {
+  color: white;
+}
+#card.white #top-bar__back-btn {
+  opacity: 1;
+  cursor: pointer;
+}
+#card.white #top-bar__lang-selector a {
+  color: white;
+  border-color: white;
+}
+#card.white #top-bar__lang-selector a.active {
+  color: #9099ae;
+  background-color: white;
+}
+#card.white #card__buttons a[data-social] {
+  color: white;
+}
+#card.white #card__buttons a[data-social]:not(.active):hover {
+  color: white;
+  border-color: white;
+}
+#card #top-bar__back-btn {
+  transition-property: opacity;
+  opacity: 0;
+  transition-duration: .35s;
+  cursor: inherit;
+}
+#card #card__buttons {
+  padding: 0 15px;
+}
+#card #card__buttons a {
+  color: #9099ae;
+  border: 2px solid transparent;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  text-align: center;
+  padding: 0;
+  margin: 0 5px;
+  transition: all 0.4s linear;
+  position: relative;
+  z-index: 8;
+}
+#card #card__buttons a[data-social=none].active, #card #card__buttons a[data-social=none]:hover {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+#card #card__buttons a[data-social=github].active, #card #card__buttons a[data-social=dribbble]:hover {
+  color: #ea4c89;
+  border-color: #ea4c89;
+}
+#card #card__buttons a[data-social=behance].active, #card #card__buttons a[data-social=behance]:hover {
+  color: #1769ff;
+  border-color: #1769ff;
+}
+#card #card__buttons a[data-social=linkedin].active, #card #card__buttons a[data-social=linkedin]:hover {
+  color: #0077b5;
+  border-color: #0077b5;
+}
+#card #card__buttons a[data-social=twitter].active, #card #card__buttons a[data-social=twitter]:hover {
+  color: #55acee;
+  border-color: #55acee;
+}
+#card #card__buttons a[data-social=instagram].active, #card #card__buttons a[data-social=instagram]:hover {
+  color: #3f729b;
+  border-color: #3f729b;
+}
+#card #card__buttons a[data-social=vimeo].active, #card #card__buttons a[data-social=vimeo]:hover {
+  color: #1ab7ea;
+  border-color: #1ab7ea;
+}
+#card #card__buttons a.active {
+  background-color: white;
+}
+
+#card__top-bar {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+  padding: 15px;
+}
+
+#top-bar__lang-selector,
+#top-bar__close-btn {
+  margin-left: auto;
+}
+
+#top-bar__lang-selector a {
+  color: #9099ae;
+  display: inline-block;
+  text-align: center;
+  font-size: 80%;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  padding: 0;
+  margin: 0 5px;
+  border: 1px solid #9099ae;
+  border-radius: 100px;
+}
+#top-bar__lang-selector a.active {
+  color: #fff;
+  background-color: #9099ae;
+}
+
+#top-bar__close-btn,
+#top-bar__back-btn {
+  cursor: pointer;
+}
+
+#card__tabs {
+  flex: 0 0 190px;
+  position: relative;
+  z-index: 20;
+  position: relative;
+}
+
+.single-tab {
+  transition: opacity 1.2s;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 20px;
+  bottom: 0;
+  right: 20px;
+  opacity: 0;
+}
+.single-tab:not(:first-child) {
+  color: #fff;
+}
+.single-tab.active {
+  z-index: 10;
+  opacity: 1;
+}
+.single-tab.active .singe-tab__image {
+  transform: translateX(-400px);
+  transition: all 0.4s cubic-bezier(0.2, 0.97, 0.39, 1) 0.7s;
+}
+
+.single-tab__header {
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.single-tab__header .my {
+  display: block;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.single-tab__content {
+  font-size: 0.7rem;
+  width: 60%;
+}
+.single-tab__content .button {
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  margin-bottom: 0;
+  border-color: white;
+  color: white;
+}
+.single-tab__content .button:hover {
+  color: #9099ae;
+  background-color: white;
+  border-color: white;
+}
+
+.singe-tab__image {
+  transform: translateX(0);
+  transition: all 0.1s;
+  margin: 0;
+  position: absolute;
+  right: -400px;
+  top: 20px;
+}
+
+#card__credits {
+  position: relative;
+  z-index: 20;
+  padding: 15px;
+  font-size: 80%;
+}
+
+.circle-overlay {
+  display: block;
+  position: absolute;
+  animation-name: expandCircleOverlay;
+  transform: scale(1);
+  animation-duration: 1s;
+  z-index: 5;
+  width: 1500px;
+  height: 1500px;
+  border-radius: 1500px;
+}
+.circle-overlay.overlay-none {
+  background-color: #ffffff;
+}
+.circle-overlay.overlay-dribbble {
+  background-color: #ea4c89;
+}
+.circle-overlay.overlay-behance {
+  background-color: #1769ff;
+}
+.circle-overlay.overlay-linkedin {
+  background-color: #0077b5;
+}
+.circle-overlay.overlay-twitter {
+  background-color: #55acee;
+}
+.circle-overlay.overlay-instagram {
+  background-color: #3f729b;
+}
+.circle-overlay.overlay-vimeo {
+  background-color: #1ab7ea;
+}
+
+@keyframes expandCircleOverlay {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
